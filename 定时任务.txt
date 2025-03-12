@@ -1,0 +1,12 @@
+配置定时任务
+crontab -e
+
+加入以下内容:
+
+
+# 每分钟运行一次硬盘温控脚本，控制硬盘仓风扇转速
+* * * * * /opt/disk-fan-control/disk_fan_control.sh >> /opt/disk-fan-control/di>
+
+# 每天晚上11点50自动关机
+50 23 * * * /opt/qmshutdown/qmshutdown.sh >> /opt/qmshutdown/auto_qmshutdown.lo>
+#52 1 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
