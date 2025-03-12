@@ -1,0 +1,14 @@
+[Unit]
+Description=UPS Monitor Service
+After=network.target
+
+[Service]
+ExecStart=/opt/qmshutdown/ups_check.sh
+Restart=always
+User=nut
+WorkingDirectory=/var/lib/nut
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
